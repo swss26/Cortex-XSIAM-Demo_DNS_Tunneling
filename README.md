@@ -37,10 +37,7 @@ Cortex-XSIAM-Demo_DNS_Tunneling/
 │   ├── protocol.md              # DNS 터널링 프로토콜 개념 명세
 │   ├── detection-guide.md       # XSIAM 탐지 접근법 요약
 │   └── diagrams/                # 구성도 (브라우저에서 열기)
-│       ├── dns-c2-attack-flow.html          # DNS C2 공격 전체 흐름
-│       ├── dns-tunneling-detail.html        # 터널링 상세 다이어그램
-│       ├── ai-purpleteam-architecture.html  # AI 퍼플팀 자동화 구성
-│       └── ad-gpo-ransomware-flow.html      # AD GPO 랜섬웨어 시나리오
+│       └── dns-tunneling-detail.html        # DNS 터널링 C2 상세 다이어그램
 └── detection/
     ├── xsiam_xql.md             # Cortex XSIAM XQL 탐지 쿼리
     └── sigma/
