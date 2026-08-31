@@ -1,0 +1,36 @@
+title: Potential DNS Tunneling C2 Channel
+id: 8f3b1c42-6a5e-4d21-9f7c-2b0e5a9d1c34
+status: experimental
+description: >
+  Detects characteristics of DNS tunneling used for command-and-control or data
+  exfiltration: abnormal record types (NULL/TXT), unusually long/high-entropy
+  subdomain labels, and a high count of unique subdomains under a single parent
+  domain. Tune thresholds and allowlist known-good domains before production use.
+references:
+  - https://attack.mitre.org/techniques/T1071/004/
+  - https://attack.mitre.org/techniques/T1048/
+author: swss26
+date: 2026/08/31
+tags:
+  - attack.command_and_control
+  - attack.t1071.004
+  - attack.exfiltration
+  - attack.t1048
+logsource:
+  category: dns
+detection:
+  selection_rare_types:
+    query_type:
+      - 'NULL'
+      - 'TXT'
+  selection_long_label:
+    query|re: '^[A-Za-z2-7]{40,}\.'      # long base32-like first label
+  condition: selection_rare_types or selection_long_label
+  # Aggregation (backend-dependent): raise fidelity when many unique subdomains
+  # resolve under one parent domain, e.g.:
+  #   | count(distinct query) by parent_domain, src_ip > 200
+falsepositives:
+  - Legitimate services that encode data in DNS (some security tools, AV cloud lookups)
+  - CDNs and telemetry endpoints with long generated hostnames
+  - Enterprise software update/health-check domains
+level: medium

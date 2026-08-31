@@ -1,0 +1,23 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Never commit working C2 source, build artifacts, or runtime logs
+*.exe
+*.dll
+*.bin
+*.log
+server.py
+client.py
+*.ps1
+build.bat
+**/dist/
+**/build/
+**/__pycache__/
+*.pyc
+
+# Secrets / tokens
+.env
+*.token
+*_pat_*
