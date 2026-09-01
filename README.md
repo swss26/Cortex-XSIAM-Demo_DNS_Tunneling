@@ -14,6 +14,19 @@
 
 ---
 
+## 🖼️ 구성도 (Overview Diagram)
+
+DNS 터널링 C2 공격의 전체 라이프사이클(MITRE ATT&CK 매핑)부터 통신 흐름, 패킷 인코딩 구조,
+Cortex XDR Causality View, 자동 대응 플레이북까지 한 장으로 정리한 다이어그램입니다.
+
+<p align="center">
+  <img alt="DNS Tunneling C2 Attack & Detection Diagram" src="docs/images/dns-tunneling-detail.png" width="900">
+</p>
+
+> 🔍 원본(인터랙티브 HTML): [docs/diagrams/dns-tunneling-detail.html](docs/diagrams/dns-tunneling-detail.html) — 브라우저에서 열면 선명하게 볼 수 있습니다.
+
+---
+
 ## 🎯 이 랩이 다루는 것 (What this lab covers)
 
 | 관점 | 내용 |
